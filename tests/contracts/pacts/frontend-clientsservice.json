@@ -1,0 +1,79 @@
+{
+  "consumer": {
+    "name": "Frontend"
+  },
+  "provider": {
+    "name": "ClientsService"
+  },
+  "interactions": [
+    {
+      "description": "a request for all clients",
+      "providerState": "I have a list of clients",
+      "request": {
+        "method": "GET",
+        "path": "/clients",
+        "headers": {
+          "Accept": "application/json, text/plain, */*"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": [
+          {
+            "firstName": "Zahid",
+            "lastName": "Nouman",
+            "age": 35,
+            "id": 1
+          },
+          {
+            "firstName": "Ali",
+            "lastName": "Khan",
+            "age": 30,
+            "id": 2
+          },
+          {
+            "firstName": "Alia",
+            "lastName": "Bhatt",
+            "age": 24,
+            "id": 3
+          }
+        ]
+      }
+    },
+    {
+      "description": "a request to create client with firstname and lastname",
+      "providerState": "I create a new client",
+      "request": {
+        "method": "POST",
+        "path": "/clients",
+        "headers": {
+          "Content-Type": "application/json;charset=utf-8"
+        },
+        "body": {
+          "firstName": "Tafseer",
+          "lastName": "Haider",
+          "age": 32
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "firstName": "Tafseer",
+          "lastName": "Haider",
+          "age": 32,
+          "id": 3
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "contract-testing-with-pact",
+  "version": "1.0.0",
+  "description": "A simple Nodejs and jest project configuring contract tests with PactJS",
+  "main": "src/index.js",
+  "scripts": {
+    "consumer": "node src/consumerService.js",
+    "provider": "node src/providerService.js",
+    "test:consumer": "jest tests/contracts/consumer --runInBand --setupFiles ./tests/helpers/pactSetup.js --setupTestFrameworkScriptFile=./tests/helpers/pactTestWrapper.js",
+    "test:provider": "jest tests/contracts/provider --runInBand --force-exit",
+     "publish:contract": "node ./tests/helpers/publish.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mtafseerhaider/contract-testing-with-pact.git"
+  },
+  "keywords": [
+    "nodejs",
+    "contract-tests",
+    "pactjs",
+    "pact"
+  ],
+  "author": "Muhammad Tafseer Haider",
+  "license": "MIT",
+  "devDependencies": {
+    "@pact-foundation/pact": "^9.15.3",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "eslint": "^7.22.0",
+    "express": "^4.17.1",
+    "jest": "^26.6.3"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
